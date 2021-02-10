@@ -13,6 +13,7 @@ For future updates (TO-DO):
   * The last x Pokemon spotted
   * Friend code of poster
 - [ ] Run on server instead of local machine for 24/7 access.
+- [ ] Store tweet ID's in DB to exclude tweets when re-running.
 
 Twitter API:
 https://developer.twitter.com/en/docs
