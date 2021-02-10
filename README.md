@@ -7,10 +7,11 @@ to verify it, posts a reply to the mentioned post.
 For future updates (TO-DO):
 - [ ] Additional error handling for more situations.
 - [ ] Add option for multiple Pokemon input.
-- [ ] Add more commands such as: * Most recent raid
-* Last time a Pokemon raid was spotted for a specific name
-* The last x Pokemon spotted
-* Friend code of poster
+- [ ] Add more commands such as: 
+  * Most recent raid
+  * Last time a Pokemon raid was spotted for a specific name
+  * The last x Pokemon spotted
+  * Friend code of poster
 
 Twitter API:
 https://developer.twitter.com/en/docs
