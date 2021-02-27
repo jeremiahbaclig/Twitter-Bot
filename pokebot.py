@@ -1,6 +1,7 @@
 # API keys not added. @PokemonRaidBot on Twitter
 
-import praw, tweepy, datetime, math, logging, time, pandas
+import praw, tweepy, datetime, math, logging, time, pandas, os
+from os import environ
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
@@ -37,8 +38,8 @@ def check_mentions(api, since_id, all_names):
 
 def most_recent(name):
     reddit = praw.Reddit(
-        client_id="API_ID",
-        client_secret="API_SECRET",
+        client_id=environ["API_ID"],
+        client_secret=environ["API_SECRET"],
         user_agent="<twitter>:<pokeraidapp>:<1.01> (by u/<ming0_>)"
     )
 
@@ -66,10 +67,10 @@ def most_recent(name):
 
 
 def main():
-    auth = tweepy.OAuthHandler("API_KEY",
-                               "API_KEY SECRET")
-    auth.set_access_token("ACCESS_TOKEN",
-                          "ACCESS_TOKEN SECRET")
+    auth = tweepy.OAuthHandler(environ["API_KEY"],
+                               environ["API_KEY SECRET"])
+    auth.set_access_token(environ["ACCESS_TOKEN"],
+                          environ["ACCESS_TOKEN SECRET"])
 
     api = tweepy.API(auth, wait_on_rate_limit=True,
                      wait_on_rate_limit_notify=True)
