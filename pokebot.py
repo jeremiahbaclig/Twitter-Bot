@@ -23,6 +23,7 @@ def check_mentions(api, since_id, all_names):
                     api.update_status(
                         status=most_recent(value.lower(), user.screen_name),
                         in_reply_to_status_id=tweet.id,
+                        exclude_reply_user_ids=1357865981155098624
                     )
                     Flag = False
                     break
@@ -32,7 +33,7 @@ def check_mentions(api, since_id, all_names):
 
     if Flag is True:
         logger.info("Invalid entry")
-        return 1
+        return since_id
     else:
         return new_since_id
 
