@@ -63,6 +63,8 @@ def most_recent(name, user):
     if Flag is False:
         return_string = ""
         return_string = "@%s New raid not found for %s. :( Try again later." % (user, name.upper())
+        
+    return return_string
 
 
 def main():
