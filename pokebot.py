@@ -36,7 +36,7 @@ def check_mentions(api, since_id, all_names):
         return new_since_id
 
 
-def most_recent(name):
+def most_recent(name, user):
     reddit = praw.Reddit(
         client_id=environ["API_ID"],
         client_secret=environ["API_SECRET"],
