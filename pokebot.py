@@ -20,7 +20,7 @@ def check_mentions(api, since_id, all_names):
                 if value.lower() in tweet.text.lower():
                     logger.info("Valid Pokemon found - sending")
                     api.update_status(
-                        status=most_recent(value.lower()),
+                        status=most_recent(value.lower(), tweet.id),
                         in_reply_to_status_id=tweet.id,
                     )
                     Flag = False
@@ -50,20 +50,18 @@ def most_recent(name):
         if name in submission.title.lower():
             difference = datetime.datetime.now().timestamp() - submission.created_utc
             if difference > 216000:
-                return_string += "Most recent %s raid found over 1 hour ago." % name.upper()
+                return_string += "@%s Most recent %s raid found over 1 hour ago." % (user, name.upper())
             elif difference > 60:
-                return_string += "Most recent %s raid found %d minutes ago." % (name.upper(), math.floor(difference / 60))
+                return_string += "@%s Most recent %s raid found %d minutes ago." % (user, name.upper(), math.floor(difference / 60))
             else:
-                return_string += "Most recent %s raid found %d seconds ago." % (name.upper(), math.floor(difference / 60))
+                return_string += "@%s Most recent %s raid found %d seconds ago." % (user, name.upper(), math.floor(difference / 60))
             Flag = True
             break
         else:
             Flag = False
     if Flag is False:
         return_string = ""
-        return_string = "New raid not found for %s. :( Try again later." % name.upper()
-
-    return return_string
+        return_string = "@%s New raid not found for %s. :( Try again later." % (user, name.upper())
 
 
 def main():
