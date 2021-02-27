@@ -19,8 +19,9 @@ def check_mentions(api, since_id, all_names):
             for value in poke:
                 if value.lower() in tweet.text.lower():
                     logger.info("Valid Pokemon found - sending")
+                    user = api.get_user(tweet.user.id)
                     api.update_status(
-                        status=most_recent(value.lower(), tweet.id),
+                        status=most_recent(value.lower(), user.screen_name),
                         in_reply_to_status_id=tweet.id,
                     )
                     Flag = False
