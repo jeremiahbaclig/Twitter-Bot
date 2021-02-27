@@ -68,9 +68,9 @@ def most_recent(name):
 
 def main():
     auth = tweepy.OAuthHandler(environ["API_KEY"],
-                               environ["API_KEY SECRET"])
+                               environ["API_KEY_SECRET"])
     auth.set_access_token(environ["ACCESS_TOKEN"],
-                          environ["ACCESS_TOKEN SECRET"])
+                          environ["ACCESS_TOKEN_SECRET"])
 
     api = tweepy.API(auth, wait_on_rate_limit=True,
                      wait_on_rate_limit_notify=True)
