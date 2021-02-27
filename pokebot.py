@@ -90,6 +90,7 @@ def main():
             time.sleep(15)  # check every 15 seconds
         except tweepy.TweepError:
             print("Authentication Failed or duplicate Tweet.")
+            time.sleep(15)
 
 
 if __name__ == "__main__":
