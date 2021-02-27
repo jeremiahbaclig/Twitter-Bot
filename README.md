@@ -12,8 +12,8 @@ For future updates (TO-DO):
   * Last time a Pokemon raid was spotted for a specific name
   * The last x Pokemon spotted
   * Friend code of poster
-- [ ] Run on server instead of local machine for 24/7 access.
-- [ ] Store tweet ID's in DB to exclude tweets when re-running.
+- [X] Run on server instead of local machine for 24/7 access.
+- [X] Store tweet ID's to exclude tweets when re-running.
 
 **Twitter API:**
 https://developer.twitter.com/en/docs
