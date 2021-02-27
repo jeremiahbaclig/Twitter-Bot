@@ -85,12 +85,16 @@ def main():
 
             since_id = check_mentions(api, since_id, all_pokemon)
             if since_id == -1:
+                since_id = 1
                 pass
             logger.info("Waiting...")
-            time.sleep(15)  # check every 15 seconds
-        except tweepy.TweepError:
-            print("Authentication Failed or duplicate Tweet.")
-            time.sleep(15)
+            time.sleep(10)
+        except tweepy.TweepError as e:
+            if "Status is a duplicate" in str(e):
+                pass
+            else:
+                print("ERROR CODE: ", str(e))
+            time.sleep(10)
 
 
 if __name__ == "__main__":
