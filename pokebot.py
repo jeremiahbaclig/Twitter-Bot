@@ -32,7 +32,7 @@ def check_mentions(api, since_id, all_names):
 
     if Flag is True:
         logger.info("Invalid entry")
-        return -1
+        return 1
     else:
         return new_since_id
 
@@ -85,9 +85,7 @@ def main():
             api.verify_credentials()
 
             since_id = check_mentions(api, since_id, all_pokemon)
-            if since_id == -1:
-                since_id = 1
-                pass
+
             logger.info("Waiting...")
             time.sleep(10)
         except tweepy.TweepError as e:
