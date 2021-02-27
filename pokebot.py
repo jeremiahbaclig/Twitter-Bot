@@ -13,8 +13,7 @@ def check_mentions(api, since_id, all_names):
     Flag = True
     for tweet in tweepy.Cursor(api.mentions_timeline, since_id=since_id).items():
         new_since_id = max(tweet.id, new_since_id)
-        if tweet.in_reply_to_status_id is not None:
-            continue
+
         for poke in all_names:
             for value in poke:
                 if value.lower() in tweet.text.lower():
