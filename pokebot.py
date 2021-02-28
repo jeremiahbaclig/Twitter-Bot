@@ -62,7 +62,8 @@ def most_recent(name, user, reddit):
 
 
 def print_hourly(api, reddit, time_counter):
-    print("counter and current hour", time_counter, datetime.datetime.now().hour)
+    check_log = "counter: " + str(time_counter) + " current hour: " + str(datetime.datetime.now().hour)
+    logger.info(check_log)
     if datetime.datetime.now().hour == time_counter:
         subreddit = reddit.subreddit("pokemongoraids")
         for submission in subreddit.new(limit=1):
