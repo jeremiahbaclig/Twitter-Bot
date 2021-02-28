@@ -77,18 +77,18 @@ def print_hourly(api, reddit, time_counter):
 
 def get_reddit():
     reddit = praw.Reddit(
-        client_id=API_ID,
-        client_secret=API_SECRET,
+        client_id=environ['API_ID'],
+        client_secret=environ['API_SECRET'],
         user_agent="<twitter>:<pokeraidapp>:<1.01> (by u/<ming0_>)"
     )
     return reddit
 
 
 def main():
-    auth = tweepy.OAuthHandler(API_KEY,
-                               API_KEY_SECRET)
-    auth.set_access_token(ACCESS_TOKEN,
-                          ACCESS_TOKEN_SECRET)
+    auth = tweepy.OAuthHandler(environ['API_KEY'],
+                               environ['API_KEY_SECRET'])
+    auth.set_access_token(environ['ACCESS_TOKEN'],
+                          environ['ACCESS_TOKEN_SECRET'])
 
     api = tweepy.API(auth, wait_on_rate_limit=True,
                      wait_on_rate_limit_notify=True)
