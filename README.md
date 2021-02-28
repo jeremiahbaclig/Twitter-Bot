@@ -1,6 +1,9 @@
 # Twitter-Bot
-Script pulls from *Reddit API* to parse through r/PokemonGoRaids and utilizes the *Twitter API* to post. It looks through the subreddit given the parameters of the last 10 **new** posts and the Pokemon name. Prior to receiving the name, it passes it through the directory of all possible Pokemon from ```https://gist.github.com/simsketch/1a029a8d7fca1e4c142cbfd043a68f19```
-to verify it, posts a reply to the mentioned post.
+Script pulls from *Reddit API* to parse through r/PokemonGoRaids and utilizes the *Twitter API* to post. It looks through the subreddit given the parameters of the last 10 **new** posts and the Pokemon name. Prior to receiving the name, reads through a .csv created from all possible Pokemon in ```https://gist.github.com/simsketch/1a029a8d7fca1e4c142cbfd043a68f19```
+to verify it, and posts a reply to the mentioned post.
+
+Find the bot at @PokemonRaidBot or the link below (live now, using *Heroku*):
+https://twitter.com/PokemonRaidBot
 
 ![](media/twitter_main.png)
 
