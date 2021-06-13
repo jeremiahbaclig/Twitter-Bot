@@ -106,7 +106,7 @@ def main():
 
             since_id = check_mentions(api, since_id, all_pokemon)
             
-            time_counter = print_hourly(api, get_reddit(), time_counter)
+            # time_counter = print_hourly(api, get_reddit(), time_counter)
 
             logger.info("Waiting...")
             time.sleep(10)
