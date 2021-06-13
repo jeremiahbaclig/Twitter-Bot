@@ -19,11 +19,12 @@ def check_mentions(api, since_id, all_names):
                 if value.lower() in tweet.text.lower():
                     logger.info("Valid Pokemon found - sending")
                     user = api.get_user(tweet.user.id)
-                    api.update_status(
-                        status=most_recent(value.lower(), user.screen_name, get_reddit()),
-                        in_reply_to_status_id=tweet.id,
-                        exclude_reply_user_ids=1357865981155098624
-                    )
+                    if tweet.user.id != 1357865981155098624:
+                        api.update_status(
+                            status=most_recent(value.lower(), user.screen_name, get_reddit()),
+                            in_reply_to_status_id=tweet.id,
+                            exclude_reply_user_ids=1357865981155098624
+                        )
                     Flag = False
                     break
             if Flag is False:
